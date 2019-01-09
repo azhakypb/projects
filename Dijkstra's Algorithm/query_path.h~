@@ -1,0 +1,16 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <limits.h>
+#include <stdbool.h>
+#include "edge_map.h"
+#define INF INT_MAX
+
+
+void traverseQuery(char *filename, mapData *fullData, long verticesNum);
+void doDijkstra(long src, long dst, mapData *fullData, long verticesNum);
+void printAns(long dist, long path[], long src, long dst);
+bool ifEdge(mapData *fullData, long i, long j);
+long edgeDist(mapData *fullData, long i, long j);
+long findMinDist(long distFromSrc[], bool sptSet[], long verticesNum);
+
+

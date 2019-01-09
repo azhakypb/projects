@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+typedef struct edgeArr{
+	long toID;
+	long dist;
+	struct edgeArr *next;
+}edgeArr;
+
+typedef struct mapData{
+	long vertexID;
+	unsigned int x;
+	unsigned int y;
+	edgeArr *head;
+}mapData;
+
+mapData *readMap(char *filename, long *vertices);
+void addEdge(mapData * fullData, long src, long dst);
+edgeArr * createEdge(long dst, long dist);
+long calcDist(mapData * fullData, long src, long dst);
+void freeMem(mapData *fullData, long verticesNum);
